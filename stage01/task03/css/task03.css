@@ -1,0 +1,21 @@
+/*
+*****第一种方法，使用flex布局，出了点问题，left设置宽度无效
+*****
+**/
+.left {
+	width:300px;
+	height:122px;
+
+}
+.right {
+	width: 120px;
+	height: 500px;
+}
+
+.container {
+	background: #aaa;
+	display: flex;
+}
+
+
+
