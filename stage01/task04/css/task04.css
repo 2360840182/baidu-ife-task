@@ -1,0 +1,42 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "Microsoft Yahei UI", sans-serif;
+}
+
+
+
+#triangle {
+	width: 400px;
+	height: 200px;
+	background: grey;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -200px;
+	margin-top: -100px;
+	
+}
+
+#top_corner {
+	background: yellow;
+	width: 50px;
+	height: 50px;
+	border-radius:  0 0 50px 0;
+	
+
+}
+
+#bottom_corner {
+	background: red;
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	border-radius: 50px 0 0 0;
+	/*left: 350px;
+	top: 150px;*/
+	right: 0;
+	bottom: 0;
+
+}
+
