@@ -1,0 +1,134 @@
+*{
+	margin:0;
+	padding:0;
+	font-family: "Microsoft Yahei",sans-serif;
+
+}
+img {
+	width: 200px;
+	height: 150px;
+}
+.header{
+	line-height:53.325px;
+	height:53.325px;
+	background:black;
+	color:white;
+	
+}
+.header h1{
+	float:left;
+	font-size:1.2em;
+	margin-left: 20px;
+}
+.header a{
+	color:white;
+	margin:10px;
+	font-size:1.2em;
+	
+	text-decoration:none;
+}
+
+.header ul{
+	float:right;
+}
+
+.header li{
+	float:left;
+	list-style-type:none;
+	
+}
+
+#container {
+	background-color: rgb(222,222,222);
+	min-width: 1000px;
+
+}
+
+div .content-block {
+	margin: 15px ;
+	padding: 15px;
+	background-color: white;
+	
+}
+
+.content-block h3 {
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.content-block p {
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+
+
+.content-block ul {
+	padding-left: 40px;
+}
+
+.content-block h4 {
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+#form {
+	
+	text-align:center;
+	padding: 15px;
+	background: white;
+	
+}
+
+#form table {
+	margin: auto;
+}
+
+#footer {
+	background: #000;
+	color:#fff;
+	height: 60px;
+	text-align: center;
+	line-height: 60px;
+	font-size: 20px;
+}
+
+#flexImage {
+	float: left;
+	border: 1px solid #000;
+	padding: 10px;
+	margin: 20px;
+}
+
+#imageContent {
+	overflow: hidden;
+}
+
+#left {
+	margin-right:380px;
+
+}
+
+#main-body {
+	position: relative;
+}
+#right {
+	position: absolute;
+	top:0;
+	right: 0;
+	margin:0 15px  ;
+	width: 365px;
+}
+
+.blue_submit {
+	height: 30px;
+	width: 100%;
+	border-radius: 15px;
+	background-color: blue;
+	color: white;
+}
