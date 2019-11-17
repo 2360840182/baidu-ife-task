@@ -1,0 +1,99 @@
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+}
+
+th {
+	background-color: #56f0d5;
+}
+
+tbody tr:first-child,
+tbody tr:nth-child(2),
+tbody tr:nth-child(3) {
+    color: red;
+    font-weight: bold;
+}
+
+td {
+	padding: 2px;
+}
+
+table tr:nth-child(odd) {
+	background-color: lightgreen;
+}
+
+input {
+	margin: 30px 0 30px 20px;
+	width: 100px;
+	text-indent: 5px;
+	border: 1px solid #b1ffb1;
+    transition: all 1s;
+}
+
+input:focus {
+	width: 200px;
+}
+
+a {
+	color: grey;
+}
+
+.part3 {
+	position: relative;
+	width: 400px;
+	height: 200px;
+	background: red;
+}
+
+.change-btn {
+	position: absolute;
+	bottom: 0px;
+	left: 138px;
+}
+
+.change-btn li {
+	display: inline-block;
+	width: 30px;
+	height:30px;
+	background-color: rgba(177, 255, 177, .6);
+	line-height: 30px;
+	text-align: center;
+}
+
+.pic {
+	position: relative;
+	height: 100px;
+}
+
+.pic li:first-child,
+.pic li:nth-child(2),
+.pic li:nth-child(3) {
+    
+    width: 300px;
+    height: 50%;
+    display: none;
+   
+    
+}
+
+.pic li:first-child {
+    background-color: red;
+}
+
+.pic li:nth-child(2) {
+    background-color: blue;
+}
+
+.pic li:nth-child(3) {
+    background-color: green;
+}
+
+.pic li:target {
+    /*-webkit-animation: change_color .8s;
+    animation: change_color .8s;
+    z-index: 2!important;*/
+    transition: all 2s;
+    display: block;
+}
