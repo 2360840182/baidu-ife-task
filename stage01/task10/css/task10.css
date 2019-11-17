@@ -1,0 +1,41 @@
+body {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	align-items: center;
+}
+
+[class*=box] {
+	
+	
+	border: 1px solid red;
+	width: 300px;
+	height: 200px;
+}
+
+.box1 {
+	height: 100px;
+}
+
+.box2 {
+	height: 150px;
+}
+
+.box3 {
+	height: 200px;
+}
+
+.box4 {
+	height: 250px;
+	border-color: blue;
+}
+
+@media screen and (max-width: 680px) {
+	[class*=box] {
+		order: 2;
+	}
+
+	.box4 {
+		order: 1;
+	}
+}
