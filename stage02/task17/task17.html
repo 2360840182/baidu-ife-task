@@ -1,0 +1,59 @@
+<!DOCTYPE >
+<html>
+	<head>
+		<meta charset="uft-8">
+		<title>task17</title>
+		<style>	
+			body {
+				display: flex;
+				flex-direction: column;
+			}
+		    #aqi-chart-wrap {
+
+		    	display: flex;
+		    	align-items: flex-end;
+		    	
+		    }
+
+		    #aqi-chart-wrap span {
+		    	text-align: center;
+		    	position: absolute;
+		    	bottom: -20px;
+		    	font-size: .2vw;
+		    	left: 0;
+		    	right: 0;
+		    }
+
+		   #aqi-chart-wrap div {
+        display: inline-block;
+        position:relative;
+            text-align: center;
+    }
+
+		    .wrap {
+		    	padding-bottom: 2%;
+		    	margin: auto;
+		    }
+		</style>
+	</head>
+	<body>
+		<fieldset id="form-gra-time">
+			<legend>请选择日期粒度：</legend>
+			<label>日<input name="gra-time" value="day" type="radio" checked="checked"></label>
+			<label>周<input name="gra-time" value="week" type="radio" ></label>
+			<label>月<input name="gra-time" value="month" type="radio" ></label>
+		</fieldset>
+		<fieldset>
+			<legend>请选择查看的城市：</legend>
+			<select id="city-select">
+				
+			</select>
+		</fieldset>
+		<!--why cant't use getElementsByClassName-->
+		<div class="wrap">
+			<div id="aqi-chart-wrap"></div>
+		</div>
+	    
+		<script src="./task17.js"></script>
+	</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>task14</title>
+	</head>
+	<body>
+		<h3>污染城市列表</h3>
+		<ul id="aqi-list">
+			
+		</ul>
+		<script type="text/javascript">
+			var aqiData = [
+				["北京", 90],
+				["上海", 50],
+				["福州", 10],
+				["广州", 50],
+				["成都", 90],
+				["西安", 100],
+			];
+			(function() {
+				//for..in循环会把某个类型的原型(prototype)中方法与属性给遍历出来，所以这可能会导致代码中出现意外的错误
+				//for in 得到的也是数组的序号
+				for(var i = 0, j = aqiData.length; i<j; i++) {
+					if (aqiData[i][1] >= 60) {
+						let li = document.createElement("li");
+						li.innerHTML = aqiData[i];
+						//console.log(li);和第一个任务一样，id填成了标签名子
+						//这里使用了闭包
+						setTimeout(function() {document.getElementById("aqi-list")
+						.appendChild(li)},2000);
+					}
+				} 
+			})();
+		</script>
+	</body>
+</html>

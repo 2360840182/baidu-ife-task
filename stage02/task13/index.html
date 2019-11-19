@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>task13</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		
+		<label>请输入北京今天空气质量: <input id="aqi-input" type="text"></label>
+		<button id="button">确认填写</button>
+		<div>您输入的值是: <span id="aqi-display">尚无录入</span></div>
+		<!--
+			value方法不会用，aqi-input输入错误，innerHTML大小写，addEvent格式，选中同样的元素
+			，监听和输入的次序
+		-->
+		<script>
+			(function() {
+				let render = function() {
+					let  input = document.getElementById("aqi-input").value;
+					let output = document.getElementById("aqi-display");
+					output.innerHTML = input;
+				};
+				let btn = document.getElementById("button");
+				btn.addEventListener("click",render,false);
+				
+			})();
+		</script>
+	</body>
+
+</html>
