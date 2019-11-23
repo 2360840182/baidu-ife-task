@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>task29</title>
+		<meta charset="utf-8"/>
+		<style>
+			p {
+				font-size: 12px;
+				color: #bbb;
+				text-indent: 50px;
+			}
+			#btn {
+				border:none;
+				border-radius: 10px;
+				background-color: blue;
+				color: white;
+				height: 30px;
+			}
+			#input {
+				margin-left:10px;
+				padding: 5px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<label>名称</label><input type="text" id="input">
+		<input type="button" id="btn" value="验证"/>
+		<input type="text" id= "text1" 
+		pattern="Banana|[Oo]range"
+		 required>
+		<p>必填，长度为4-16个字符</p>
+		<script>
+			var hint = document.getElementsByTagName("p")[0];
+			document.getElementById("btn").onclick = function validate() {
+				var value = document.getElementById("input").value;
+				if(value == "") {
+					hint.innerHTML = "姓名不能为空";
+					hint.style.color = "red";
+				}else if(getLength(value) > 16 || getLength(value) < 4) {
+					hint.innerHTML = "字符数限制为4-16位";
+					hint.style.color = "pink";
+				}else {
+					hint.innerHTML = "输入正确";
+					hint.style.color = "blue";
+				}
+			};
+
+			function getLength(text) {
+				var count = 0;
+				for(var i = 0, j = text.length; i < j; i++) {
+					if(text.charCodeAt(i) >= 0 && text.charCodeAt(i) <= 128) {
+						count++;
+					}else {
+						count +=2;
+					}
+				}
+				return count;
+			}
+		</script>
+	</body>
+</html>

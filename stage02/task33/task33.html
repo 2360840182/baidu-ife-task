@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>task33</title>
+		<style>
+			td {
+			    width: 40px;
+			    height: 40px;
+			    text-align: center;
+			}
+
+			tr:nth-child(n+2)>td:nth-child(n+2) {
+				border: 1px solid;
+			}
+			.robot-box {
+				transition: all .8s;
+				height: 40px;
+				width: 40px;
+				position: absolute;
+				top: 50px;
+				left: 50px;
+				transform: rotate(0deg);
+				background: url(./box.jpg) no-repeat 40% 40%;
+			}
+		</style>
+	</head>
+	<body>
+		<table  cellspacing="0" cellpadding="0">
+			<tr><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr>
+			<tr><td>1</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+			<tr><td>2</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+			<tr><td>3</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+			<tr><td>4</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+			<tr><td>5</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+			<tr><td>6</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+			<tr><td>7</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+			<tr><td>8</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+			<tr><td>9</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+			<tr><td>10</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+		</table>
+		<div class="robot-box" id="robot_box"></div>
+	    <input type="text" id="comand_input">
+	    <input type="button" id="comand_button" value="GO">
+	    <input type="button" id="turn_left" value="TUN LEF">
+	    <input type="button" id="turn_right" value="TUN RIG">
+	    <input type="button" id="turn_back" value="TUN BAC">
+	    <script type="text/javascript" src="./task33.js"></script>
+	</body>
+</html>

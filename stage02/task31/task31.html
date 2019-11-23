@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>task31</title>
+		<style>
+			#beijing {
+				display: none;
+			}
+			#social-group {
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<input type="radio" id="inschool" checked="checked" name="student">
+			<label for="inschool">在校生</label>
+			<input type="radio" id="social" name="student">
+			<label for="social">非在校生</label>
+		</div>
+		
+		<div id="inschool-group">
+			<label for="location">学校</label>
+			<select id="location">
+				<option value="fujian">福建</option>	
+				<option value="beijing">北京</option>
+			</select>
+			<span id="school">
+				<select id="fujian">
+					<option>福建师范大学</option>
+					<option>厦门大学</option>
+				</select>
+				<select id="beijing">
+					<option>北京大学</option>
+					<option>北京理工大学</option>
+				</select>
+			</span>
+			
+		</div>
+		<div id='social-group'>
+			<textarea></textarea>
+		</div>
+		<script>
+			var location1 = document.getElementById("location");
+			location1.addEventListener("change",schoolShow);
+
+			function schoolShow() {
+				var index = this.selectedIndex;
+				
+				var location_name = this.options[index].value;
+				var selectArray = document.getElementById("school").getElementsByTagName("select");
+				for(var i = 0, j = selectArray.length; i < j; i++){
+					selectArray[i].style.display = "none";
+				}
+				document.getElementById(location_name).style.display = "inline-block";
+			}
+
+			var inschool = document.getElementById("inschool");
+			var social = document.getElementById("social");
+			inschool.addEventListener("change",groupShow);
+			social.addEventListener("change",groupShow);
+			function groupShow() {
+				str = this.getAttribute("id") + "-group";
+				if(str === "inschool-group"){
+					document.getElementById("inschool-group").style.display = "block";
+					document.getElementById("social-group").style.display = "none";
+				}else{
+					document.getElementById("inschool-group").style.display = "none";
+					document.getElementById("social-group").style.display = "block";
+				}
+				
+			}
+		</script>
+	</body>
+</html>

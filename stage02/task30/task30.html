@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>task30</title>
+		<meta charset="utf-8"/>
+		<style>
+			form {
+				display: flex;
+				flex-direction: column;
+			}
+
+			p {
+				font-size: 12px;
+				color: #bbb;
+				text-indent: 50px;
+			}
+			div{
+	           margin:5px auto;
+	           display: flex;
+	           flex-flow: column;
+	           width: 300px;
+	        }
+			p {
+				display: none;
+			}
+			input[type="submit"] {
+			margin: 10px auto;
+            border: none;
+            background-color: #2F79BA;
+            color: #fff;
+            border-radius: 5px;
+            padding: 10px 20px;
+            width: 300px;
+            cursor: pointer;
+        }
+		</style>
+	</head>
+	<body>
+		<form >
+			<div>
+				<label>名称</label><input type="text" id="input" name="name">
+				<p>必填，长度为4~16个字符</p>
+			</div>
+			<div>
+				<label>密码</label><input type="password" id="password" name="password">
+				<p>请输入密码</p>
+			</div>
+			<div>
+				<label>密码确认</label><input type="password" id="input" name="vertify">
+				<p>再次输入相同的密码</p>
+			</div>
+			<div>
+				<label>邮箱</label><input type="email" id="input" name="e-mail">
+				<p>输入您的邮箱</p>
+			</div>
+			<div>
+				<label>手机</label><input type="text" id="input" name="telphone">
+				<p>输入您的手机号码<p>
+			</div>
+			<input type="submit" id="submit" value="提交"/>
+		</form>
+		<script>
+			for (var i = 0, j = document.getElementsByTagName("input"); i < j.length; i++) {
+				j[i].addEventListener("focus",function() {
+					this.nextElementSibling.style.display = "block";
+				});
+				j[i].addEventListener("blur",function() {
+					let that = this;
+					if(that.name == "name" )validateName(that);
+					if(that.name == "password" )validatePassword(that);
+					if(that.name == "vertify" )reconfirm(that);
+					if(that.name == "e-mail" )checkEmail(that);
+					if(that.name == "telphone" )validatephone(that);
+
+				});
+			}
+			
+			
+			function validateName(that) {
+				var value = that.value;
+				if(value == "") {
+					that.nextElementSibling.innerHTML = "姓名不能为空";
+					that.nextElementSibling.style.color = "red";
+					that.style.border = "red 5px solid";
+				}else if(getLength(value) > 16 || getLength(value) < 4) {
+					that.nextElementSibling.innerHTML = "字符数限制为4-16位";
+					that.nextElementSibling.style.color = "pink";
+					that.style.border = "red 5px solid";
+				}else {
+					that.nextElementSibling.innerHTML = "输入正确";
+					that.nextElementSibling.style.color = "blue";
+					that.style.border = "green 5px solid";
+				}
+			}
+
+			function getLength(text) {
+				var count = 0;
+				for(var i = 0, j = text.length; i < j; i++) {
+					if(text.charCodeAt(i) >= 0 && text.charCodeAt(i) <= 128) {
+						count++;
+					}else {
+						count +=2;
+					}
+				}
+				return count;
+			}
+
+			function validatePassword(that) {
+				
+				if(that.value != ""){
+                that.nextElementSibling.innerHTML = "密码可用";
+                that.nextElementSibling.style.color = "#0f0";
+                that.style.border = "2px solid #0f0"
+            }else{
+                that.nextElementSibling.innerHTML = "请输入密码";
+                that.nextElementSibling.style.color = "#BBBBBB";
+                that.style.border = "1px solid #888";
+            	}
+			}
+
+			function reconfirm(that) {
+				var ps = document.getElementById("password");
+				if(that.value!=""){
+	                if(ps.value === that.value){
+	                    that.nextElementSibling.innerHTML = "密码输入一致";
+	                    that.nextElementSibling.style.color = "#0f0";
+	                    that.style.border = "2px solid #0f0";
+	                }else{
+	                    that.nextElementSibling.innerHTML = "密码输入不一致";
+	                    that.nextElementSibling.style.color = "#f00";
+	                    that.style.border = "2px solid #f00";
+	                }
+	            }else{
+	                that.nextElementSibling.innerHTML = "再次输入相同的密码";
+	                that.nextElementSibling.style.color = "#bbb";
+	                that.style.border = "1px solid #888";
+	            }
+			}
+
+			function checkEmail(that) {
+				var filter = /^[a-z0-9]([a-z0-9]*[-_]?[a-z0-9]+)*@([a-z0-9]*[-_]?[a-z0-9]+)+[\.][a-z]{2,3}([\.][a-z]{2})?$/;
+				if(that.value != ""){
+					if (filter.test(that.value)) {
+						that.nextElementSibling.innerHTML = "邮箱格式正确";
+	                    that.nextElementSibling.style.color = "#0f0";
+	                    that.style.border = "2px solid #0f0";
+					}else{
+	                   that.nextElementSibling.innerHTML = "邮箱格式错误";
+	                   that.nextElementSibling.style.color = "#f00";
+	                   that.style.border = "2px solid #f00";
+	                }
+				}else{
+					that.nextElementSibling.innerHTML = "输入您的邮箱";
+	               that.nextElementSibling.style.color = "#BBB";
+	               that.style.border = "1px solid #888";
+				}
+				
+			}
+
+			function validatephone(that) {
+				if(that.value != ""){
+                	var filter = /^1[1-9]{10}$/;
+	                if(filter.test(that.value)){
+	                    that.nextElementSibling.innerHTML = "手机格式正确";
+	                    that.nextElementSibling.style.color = "#0f0";
+	                    that.style.border = "2px solid #0f0";
+	                }else{
+	                    that.nextElementSibling.innerHTML = "手机格式错误";
+	                    that.nextElementSibling.style.color = "#f00";
+	                    that.style.border = "2px solid #f00";
+	                }
+	            }else{
+	                that.nextElementSibling.innerHTML = "输入您的手机号码";
+	                that.nextElementSibling.style.color = "#BBB";
+	                that.style.border = "1px solid #888";
+	            }
+			}
+			var validateAll = function (){
+	            if(false){
+	                alert("提交成功！")
+	            }else{
+	                alert("提交失败，请正确填写。")
+	            }
+	        }
+
+        document.getElementById("submit").addEventListener("click",validateAll,false)
+		</script>
+	</body>
+</html>

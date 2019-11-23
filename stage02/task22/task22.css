@@ -1,0 +1,17 @@
+#root {
+	border: 1px solid ;
+	display: flex;
+}
+
+.layer1 {
+	border: 1px solid;
+	flex:1;
+	margin: 20px;
+	display: flex;
+}
+
+.layer2 {
+	flex: 2;
+	border: 1px solid;
+	margin: 20px;
+}
